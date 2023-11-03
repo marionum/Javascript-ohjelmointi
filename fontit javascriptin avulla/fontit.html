@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fontit</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+    <div id="container">
+    <p id="demo">Fonttien vaihto JavaScriptin avulla</p>
+    
+    <div id="fontInfo">
+        <p>Fonttikoko: 20px</p>
+        <p>Fonttityyppi: Roboto</p>
+    </div>
+
+    <button type="button" id="fontButton">Fontin koko</button>
+</div>
+    <script>
+        let fontIndex = 0; 
+        const fonts = [
+            "Roboto, sans-serif",
+            "Mansalva, cursive",
+            "Grenze, serif",
+            "Turret Road, cursive",
+            "Courier New, monospace"
+        ]; 
+        
+        let fontSizeIndex = 0; 
+        const fontSizes = [20, 24, 28, 32, 16]; 
+        
+        const demoElement = document.getElementById("demo");
+        const fontInfoElement = document.getElementById("fontInfo");
+        const fontButton = document.getElementById("fontButton");
+
+        function updateFontInfo() {
+            const font = fonts[fontIndex];
+            const fontSize = fontSizes[fontSizeIndex];
+            
+            demoElement.style.fontFamily = font;
+            demoElement.style.fontSize = fontSize + "px";
+            fontInfoElement.innerHTML = `
+                <p>Fonttikoko: ${fontSize}px</p>
+                <p>Fonttityyppi: ${font.split(",")[0]}</p>
+            `;
+        }
+
+        fontButton.addEventListener("click", function() {
+            fontIndex = (fontIndex + 1) % fonts.length; 
+            fontSizeIndex = (fontSizeIndex + 1) % fontSizes.length; 
+            updateFontInfo();
+        });
+
+       
+        updateFontInfo();
+    </script>
+</body>
+</html>

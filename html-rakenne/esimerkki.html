@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Rakenna HMTL</title>
+  </head>
+  <body>
+    <header class="ylätunniste">
+      <h1>Artikkelin otsikko</h1>
+      <div id="div1">
+        <p id="p1">
+          Ensimmäinen kappale! Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit. Cras semper, nisi rhoncus pharetra fringilla,mauris
+          tortor vulputate diam, vel viverra lacus massa ac libero. Dicta
+        </p>
+      </div>
+    </header>
+    <section id="rinnakkain">
+      <p id="p2">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
+      </p>
+      <figure id="kuva">
+        <img src="picture.gif" alt="image-js" height="200" width="450"/>
+      </figure>
+    </section>
+
+    <footer>
+      <p>&copy; Mariya.Kabdulova. 16.8.2023.</p>
+    </footer>
+
+    <script>
+      const para = document.createElement("p");
+      const node = document.createTextNode(
+        "Uusi kappale! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mini veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      );
+
+      para.appendChild(node);
+
+      const element = document.getElementById("div1");
+      element.appendChild(para);
+    </script>
+  </body>
+</html>
